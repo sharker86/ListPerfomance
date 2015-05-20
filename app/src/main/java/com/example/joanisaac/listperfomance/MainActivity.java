@@ -1,9 +1,11 @@
 package com.example.joanisaac.listperfomance;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -37,8 +39,8 @@ public class MainActivity extends ActionBarActivity {
         modelValues = new ArrayList<Model>();
         for(int i= 0; i < MAX_VALUES; i++){
             //Bitmap bMap = BitmapFactory.decodeFile("/sdcard/test2.png");
-            Bitmap bMap = BitmapFactory.decodeResource(getResources(), R.drawable.tendecias);
 
+            Bitmap bMap = BitmapFactory.decodeResource(getResources(), R.drawable.tendencias);
             Model val = new Model(bMap,Integer.toString(i),"Descripcion"+Integer.toString(i));
 
             modelValues.add(val);
