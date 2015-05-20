@@ -50,8 +50,8 @@ public class MainActivity extends ActionBarActivity {
         for (int i = 0; i < values.length; ++i) {
             list.add(values[i]);
         }
-        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, android.R.id.text1, values);
+        final ArrayAdapter<Model> adapter = new ArrayAdapter<Model>(this,
+                android.R.layout.two_line_list_item, android.R.id.text1, modelValues);
         listview.setAdapter(adapter);
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
