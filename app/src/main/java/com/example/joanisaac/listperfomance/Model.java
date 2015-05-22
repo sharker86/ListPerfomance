@@ -8,14 +8,14 @@ import android.media.Image;
  */
 public class Model {
 
-    private Bitmap Picture;
+    private int Picture;
     private String Title;
     private String Description;
 
     public Model() {
     }
 
-    public Model(Bitmap picture, String title, String description){
+    public Model(int picture, String title, String description){
         Picture = picture;
         Title = title;
         Description = description;
@@ -29,11 +29,11 @@ public class Model {
         Title = title;
     }
 
-    public Bitmap getPicture() {
+    public int getPicture() {
         return Picture;
     }
 
-    public void setPicture(Bitmap picture) {
+    public void setPicture(int picture) {
         Picture = picture;
     }
 

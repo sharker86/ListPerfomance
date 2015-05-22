@@ -40,7 +40,7 @@ public class MainActivity extends ActionBarActivity {
         for(int i= 0; i < MAX_VALUES; i++){
             //Bitmap bMap = BitmapFactory.decodeFile("/sdcard/test2.png");
 
-            Bitmap bMap = BitmapFactory.decodeResource(getResources(), R.drawable.tendencias);
+            int bMap = R.drawable.tendencias;
             Model val = new Model(bMap,Integer.toString(i),"Descripcion"+Integer.toString(i));
 
             modelValues.add(val);
