@@ -23,35 +23,29 @@ import java.util.List;
 public class MainActivity extends ActionBarActivity {
 
     private static final int MAX_VALUES = 10;
-    private String[] values;
     private ArrayList<Model> modelValues;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final ListView listview = (ListView) findViewById(R.id.lista);
-        values = new String[] { "Android", "iPhone", "WindowsMobile",
-                "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-                "Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
-                "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
-                "Android", "iPhone", "WindowsMobile" , "Calculator"};
+
 
         modelValues = new ArrayList<Model>();
         for(int i= 0; i < MAX_VALUES; i++){
             //Bitmap bMap = BitmapFactory.decodeFile("/sdcard/test2.png");
 
             int bMap = R.drawable.tendencias;
-            Model val = new Model(bMap,Integer.toString(i),"Descripcion"+Integer.toString(i));
+            Model val = new Model(bMap,"Title "+Integer.toString(i),"Descripcion "+Integer.toString(i));
 
             modelValues.add(val);
         }
 
         final ArrayList<String> list = new ArrayList<String>();
-        for (int i = 0; i < values.length; ++i) {
-            list.add(values[i]);
-        }
-        final ArrayAdapter<Model> adapter = new ArrayAdapter<Model>(this,
-                android.R.layout.two_line_list_item, android.R.id.text1, modelValues);
+
+        //final ArrayAdapter<Model> adapter = new ArrayAdapter<Model>(this,
+        //        android.R.layout.two_line_list_item, android.R.id.text1, modelValues);
+        CustomAdapter adapter = new CustomAdapter(this, modelValues);
         listview.setAdapter(adapter);
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -59,10 +53,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, final View view,
                                     int position, long id) {
-                if (position >= 0 && position < values.length && values[position].equals("Calculator")) {
 
-                }
-                view.setBackgroundColor(Color.argb(1, 20, 20, 20));
             }
 
         });

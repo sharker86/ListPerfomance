@@ -4,11 +4,13 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageItem"/>
+        android:id="@+id/imageItem"
+        android:layout_gravity="center"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_gravity="center">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
