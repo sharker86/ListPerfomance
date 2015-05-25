@@ -4,6 +4,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 
 public class DetailActivity extends ActionBarActivity {
@@ -14,6 +18,12 @@ public class DetailActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         Model myObject = (Model) getIntent().getSerializableExtra("SampleModel");
+        final ImageView img = (ImageView) findViewById(R.id.imageItem);
+        final TextView text = (TextView) findViewById(R.id.Title);
+        final TextView descp = (TextView) findViewById(R.id.Description);
+        img.setImageResource(myObject.getPicture());
+        text.setText(myObject.getTitle());
+        descp.setText(myObject.getDescription());
 
     }
 
