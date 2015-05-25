@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.os.Parcelable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -22,7 +23,7 @@ import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
 
-    private static final int MAX_VALUES = 10;
+    private static final int MAX_VALUES = 100000;
     private ArrayList<Model> modelValues;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,17 +55,16 @@ public class MainActivity extends ActionBarActivity {
             public void onItemClick(AdapterView<?> parent, final View view,
                                     int position, long id) {
 
+                ShowDetail(position);
             }
 
         });
     }
 
-    public void startCalculator() {
-        //Intent intent = new Intent(this, Calculator.class);
-        //EditText editText = (EditText) findViewById(R.id.edit_message);
-        //String message = editText.getText().toString();
-        //intent.putExtra(EXTRA_MESSAGE, message);
-        //startActivity(intent);
+    public void ShowDetail(int position) {
+        Intent intent = new Intent(this, DetailActivity.class);
+        intent.putExtra("SampleModel", modelValues.get(position));
+        startActivity(intent);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

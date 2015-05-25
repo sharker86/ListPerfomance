@@ -3,10 +3,12 @@ package com.example.joanisaac.listperfomance;
 import android.graphics.Bitmap;
 import android.media.Image;
 
+import java.io.Serializable;
+
 /**
  * Created by JoanIsaac on 19/05/2015.
  */
-public class Model {
+public class Model implements Serializable{
 
     private int Picture;
     private String Title;
